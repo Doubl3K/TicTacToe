@@ -3,6 +3,27 @@ body{
     color: white;
 }
 
+.game-wrapper{
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    justify-items: center;
+    margin-top: 10vh;
+}
+
+.player{
+    background-color: rgb(48, 48, 48);
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    max-height: 10vh;
+    min-width: 10vw;
+    align-items: center;
+}
+
+.score{
+    padding-top: 2vh;
+}
+
 .game-board{
     display: grid;
     grid-template: 200px 200px 200px / 200px 200px 200px;
@@ -16,3 +37,4 @@ button{
     width: 200px;
     height: 200px;
 }
+

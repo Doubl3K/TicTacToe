@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="layout.css">
 </head>
 <body>
-    <div class="game-board">
+    <div class="game-wrapper">
+        <div class="player">
+            <label for="player1">Player1</label>
+            <div class="score">2000</div>
+        </div>
+        <div class="game-board">
         <button id="playground1"></button>
         <button id="playground2"></button>
         <button id="playground3"></button>
@@ -18,9 +23,12 @@
         <button id="playground7"></button>
         <button id="playground8"></button>
         <button id="playground9"></button>
+        </div>
+        <div class="player">
+            <label for="player2">Player2</label>
+            <div class="score">2000</div>
+        </div>
     </div>
-
-
     <script src="logic.js"></script>
 </body>
 </html>
