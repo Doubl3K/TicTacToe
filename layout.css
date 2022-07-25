@@ -33,8 +33,24 @@ body{
     align-items: center;
 }
 
-button{
+.game-board button{
     width: 200px;
     height: 200px;
+}
+
+#start-button-wrapper{
+    display: flex;
+    width: 99.5vw;   
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+#start-button{
+    font-size: 2rem;
+    background-color: rgb(40, 184, 52);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    width: 10vw;
 }
 
