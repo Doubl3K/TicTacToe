@@ -15,6 +15,7 @@ const player2 = createPlayers("Jeff");
 
 const startGame = () =>{
     console.log("the game has been started");
+    const gameArr = ["test","O","O","O","O","O","X","O","O"];
     
     const turnLogic = (() =>{
         let playerTurnCupp = 0;
@@ -78,7 +79,30 @@ const startGame = () =>{
         }); 
     })();
 
-}
-
+    const winnerLogic = (() =>{
+        //Horziontal winner check
+            if (gameArr[0]==gameArr[1] && gameArr[0]==gameArr[2]) {
+                console.log("Winner in row 1");
+            } else if (gameArr[3]==gameArr[4] && gameArr[3]==gameArr[5]){
+                console.log("Winner in row 2");
+            } else if (gameArr[6]==gameArr[7] && gameArr[6]==gameArr[8]){
+                console.log("Winner in row 3");
+            }
+        //Vertical winner check
+            if (gameArr[0]==gameArr[3] && gameArr[0]==gameArr[6]) {
+                console.log("Winner in column 1");
+            } else if (gameArr[1]==gameArr[4] && gameArr[3]==gameArr[7]){
+                console.log("Winner in column 2");
+            } else if (gameArr[2]==gameArr[5] && gameArr[2]==gameArr[8]){
+                console.log("Winner in column 3");
+            }
+        //Cross winner check
+            if (gameArr[0]==gameArr[4] && gameArr[0]==gameArr[8]) {
+                console.log("Cross win from top left");
+            } else if (gameArr[2]==gameArr[4] && gameArr[2]==gameArr[6]) {
+                console.log("cross win from top right");
+            }
+        })();
+    }
 document.getElementById("start-button").addEventListener("click", startGame);
 
