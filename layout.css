@@ -3,6 +3,9 @@ body{
     color: white;
 }
 
+button:hover{
+    cursor: pointer;
+}
 .game-wrapper{
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr;
@@ -36,6 +39,7 @@ body{
 .game-board button{
     width: 200px;
     height: 200px;
+    font-size: 3rem;
 }
 
 #start-button-wrapper{
