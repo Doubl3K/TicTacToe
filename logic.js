@@ -98,13 +98,27 @@ const startGame = () =>{
     })();
 
     const winnerLogic = () =>{
+
+        const winDrawLogic = (playground) =>{
+            console.log(playground.id);
+            let div = document.createElement("div");
+            div.setAttribute("id", "line");
+            document.getElementById(playground.id).appendChild(div);
+            alert("Player --- won");
+        }
         //Horziontal winner check
             if (gameArr[0]==gameArr[1] && gameArr[0]==gameArr[2]) {
                 console.log("Winner in row 1");
+                let playground = document.getElementById("playground1");
+                winDrawLogic(playground);
             } else if (gameArr[3]==gameArr[4] && gameArr[3]==gameArr[5]){
                 console.log("Winner in row 2");
+                let playground = document.getElementById("playground4");
+                winDrawLogic(playground);
             } else if (gameArr[6]==gameArr[7] && gameArr[6]==gameArr[8]){
                 console.log("Winner in row 3");
+                let playground = document.getElementById("playground7");
+                winDrawLogic(playground);
             }
         //Vertical winner check
             if (gameArr[0]==gameArr[3] && gameArr[0]==gameArr[6]) {
@@ -121,7 +135,11 @@ const startGame = () =>{
                 console.log("cross win from top right");
             }
             console.log(gameArr);
-        }
     }
+}
 document.getElementById("start-button").addEventListener("click", startGame);
 
+//Win draw animation
+//Alert Player won after 2sec + play again 
+//Delete start button after press 
+//Delete Scores
