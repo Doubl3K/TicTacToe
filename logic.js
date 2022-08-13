@@ -9,13 +9,14 @@ function createPlayers(name) {
     }
 }
 
-const player1 = createPlayers("Tim");
-const player2 = createPlayers("Jeff");
+const player1 = document.getElementById("namePlayer1");
+const player2 = document.getElementById("namePlayer2");
 
 
 const startGame = () =>{
     console.log("the game has been started");
     const gameArr = ["field1", "field2", "field3", "field4", "field5", "field6", "field7", "field8", "field9"];
+    document.getElementById("start-button").removeEventListener("click", startGame);
     
     const turnLogic = (() =>{
         let playerTurnCupp = 0;
@@ -120,7 +121,6 @@ const startGame = () =>{
             for (let pup = 0; pup < 3; pup++) {
                 document.getElementById("playground"+field).style.background = "red";
                 field = parseInt(field) + 4;
-                console.log(field);
             }
             alert("Player --- won");
         }
@@ -162,7 +162,6 @@ const startGame = () =>{
                 let playground = document.getElementById("playground3");
                 crossWinDrawLogic(playground);
             }
-            console.log(gameArr);
     }
 }
 document.getElementById("start-button").addEventListener("click", startGame);
