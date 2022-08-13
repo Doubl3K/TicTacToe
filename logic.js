@@ -99,26 +99,27 @@ const startGame = () =>{
 
     const winnerLogic = () =>{
 
-        const winDrawLogic = (playground) =>{
-            console.log(playground.id);
-            let div = document.createElement("div");
-            div.setAttribute("id", "line");
-            document.getElementById(playground.id).appendChild(div);
+        const horizWinDrawLogic = (playground) =>{
+            let field = playground.id.slice(10,11);
+            for (let pup = 0; pup < 3; pup++) {
+                document.getElementById("playground"+field).style.background = "red";
+                field ++;
+            }
             alert("Player --- won");
         }
         //Horziontal winner check
             if (gameArr[0]==gameArr[1] && gameArr[0]==gameArr[2]) {
                 console.log("Winner in row 1");
                 let playground = document.getElementById("playground1");
-                winDrawLogic(playground);
+                horizWinDrawLogic(playground);
             } else if (gameArr[3]==gameArr[4] && gameArr[3]==gameArr[5]){
                 console.log("Winner in row 2");
                 let playground = document.getElementById("playground4");
-                winDrawLogic(playground);
+                horizWinDrawLogic(playground);
             } else if (gameArr[6]==gameArr[7] && gameArr[6]==gameArr[8]){
                 console.log("Winner in row 3");
                 let playground = document.getElementById("playground7");
-                winDrawLogic(playground);
+                horizWinDrawLogic(playground);
             }
         //Vertical winner check
             if (gameArr[0]==gameArr[3] && gameArr[0]==gameArr[6]) {
