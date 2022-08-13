@@ -107,6 +107,23 @@ const startGame = () =>{
             }
             alert("Player --- won");
         }
+        const vertWinDrawLogic = (playground) =>{
+            let field = playground.id.slice(10,11);
+            for (let pup = 0; pup < 3; pup++) {
+                document.getElementById("playground"+field).style.background = "red";
+                field = parseInt(field) + 3;
+            }
+            alert("Player --- won");
+        }
+        const crossWinDrawLogic = (playground) =>{
+            let field = playground.id.slice(10,11);
+            for (let pup = 0; pup < 3; pup++) {
+                document.getElementById("playground"+field).style.background = "red";
+                field = parseInt(field) + 4;
+                console.log(field);
+            }
+            alert("Player --- won");
+        }
         //Horziontal winner check
             if (gameArr[0]==gameArr[1] && gameArr[0]==gameArr[2]) {
                 console.log("Winner in row 1");
@@ -124,16 +141,26 @@ const startGame = () =>{
         //Vertical winner check
             if (gameArr[0]==gameArr[3] && gameArr[0]==gameArr[6]) {
                 console.log("Winner in column 1");
-            } else if (gameArr[1]==gameArr[4] && gameArr[3]==gameArr[7]){
+                let playground = document.getElementById("playground1");
+                vertWinDrawLogic(playground);
+            } else if (gameArr[1]==gameArr[4] && gameArr[1]==gameArr[7]){
                 console.log("Winner in column 2");
+                let playground = document.getElementById("playground2");
+                vertWinDrawLogic(playground);
             } else if (gameArr[2]==gameArr[5] && gameArr[2]==gameArr[8]){
                 console.log("Winner in column 3");
+                let playground = document.getElementById("playground3");
+                vertWinDrawLogic(playground);
             }
         //Cross winner check
             if (gameArr[0]==gameArr[4] && gameArr[0]==gameArr[8]) {
                 console.log("Cross win from top left");
+                let playground = document.getElementById("playground1");
+                crossWinDrawLogic(playground);
             } else if (gameArr[2]==gameArr[4] && gameArr[2]==gameArr[6]) {
                 console.log("cross win from top right");
+                let playground = document.getElementById("playground3");
+                crossWinDrawLogic(playground);
             }
             console.log(gameArr);
     }
