@@ -9,11 +9,14 @@ function createPlayers(name) {
     }
 }
 
-const player1 = document.getElementById("namePlayer1");
-const player2 = document.getElementById("namePlayer2");
-
 
 const startGame = () =>{
+
+
+    const player1 = createPlayers(document.getElementById("namePlayer1.value"));
+    console.log(document.getElementById("namePlayer1"));
+    player1.saySomething();
+
     console.log("the game has been started");
     const gameArr = ["field1", "field2", "field3", "field4", "field5", "field6", "field7", "field8", "field9"];
     document.getElementById("start-button").removeEventListener("click", startGame);
