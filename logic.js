@@ -1,21 +1,19 @@
 
-function createPlayers(name) {
-    return {
-        name : name,
-        saySomething: function(){
-            console.log("Hi my name is " + this.name);
-        },
-
-    }
-}
-
-
 const startGame = () =>{
 
 
-    const player1 = createPlayers(document.getElementById("namePlayer1.value"));
-    console.log(document.getElementById("namePlayer1"));
-    player1.saySomething();
+function createPlayers(name) {
+    return {
+        name : name,
+        winner: function(){
+            alert(this.name + " won");
+        },
+    }
+}
+
+    const player1 = createPlayers(document.getElementById("namePlayer1").value);
+    const player2 = createPlayers(document.getElementById("namePlayer2").value);
+    
 
     console.log("the game has been started");
     const gameArr = ["field1", "field2", "field3", "field4", "field5", "field6", "field7", "field8", "field9"];
@@ -102,14 +100,19 @@ const startGame = () =>{
     })();
 
     const winnerLogic = () =>{
-
         const horizWinDrawLogic = (playground) =>{
             let field = playground.id.slice(10,11);
             for (let pup = 0; pup < 3; pup++) {
                 document.getElementById("playground"+field).style.background = "red";
                 field ++;
             }
-            alert("Player --- won");
+            let sideWinner = document.getElementById("playground"+(field-1)).textContent;
+            if (sideWinner == "O") {
+                player1.winner();
+            }
+            else{
+                player2.winner();
+            }
         }
         const vertWinDrawLogic = (playground) =>{
             let field = playground.id.slice(10,11);
@@ -117,7 +120,13 @@ const startGame = () =>{
                 document.getElementById("playground"+field).style.background = "red";
                 field = parseInt(field) + 3;
             }
-            alert("Player --- won");
+            let sideWinner = document.getElementById("playground"+(field-3)).textContent;
+            if (sideWinner == "O") {
+                player1.winner();
+            }
+            else{
+                player2.winner();
+            }
         }
         const crossWinDrawLogic = (playground) =>{
             let field = playground.id.slice(10,11);
@@ -125,7 +134,13 @@ const startGame = () =>{
                 document.getElementById("playground"+field).style.background = "red";
                 field = parseInt(field) + 4;
             }
-            alert("Player --- won");
+            let sideWinner = document.getElementById("playground"+(field-4)).textContent;
+            if (sideWinner == "O") {
+                player1.winner();
+            }
+            else{
+                player2.winner();
+            }
         }
         //Horziontal winner check
             if (gameArr[0]==gameArr[1] && gameArr[0]==gameArr[2]) {
