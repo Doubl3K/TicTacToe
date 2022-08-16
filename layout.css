@@ -23,8 +23,8 @@ button:hover{
     align-items: center;
 }
 
-.score{
-    padding-top: 2vh;
+.player div{
+    font-size: 4rem;
 }
 
 .game-board{
