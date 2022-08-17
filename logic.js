@@ -6,7 +6,16 @@ function createPlayers(name) {
     return {
         name : name,
         winner: function(){
+            console.log(player1);
+            if (player1.name == "") {
+                alert ("O won");
+            }
+            else if (player2.name == ""){
+                alert ("X won")
+            }
+            else{
             alert(this.name + " won");
+            }
         },
     }
 }
